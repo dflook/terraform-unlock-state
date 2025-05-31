@@ -137,7 +137,7 @@ Force unlocks a Terraform remote state.
 
   The runtime environment for these actions is subject to change in minor version releases. If using this environment variable, specify the minor version of the action to use.
 
-  The runtime image is currently based on `debian:bullseye`, with the command run using `bash -xeo pipefail`.
+  The runtime image is currently based on `debian:bookworm`, with the command run using `bash -xeo pipefail`.
 
   For example:
 
@@ -181,7 +181,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform Unlock
-        uses: dflook/terraform-unlock-state@v1
+        uses: dflook/terraform-unlock-state@v2
         with:
           path: ${{ github.event.inputs.path }}
           lock_id: ${{ github.event.inputs.lock_id }}
